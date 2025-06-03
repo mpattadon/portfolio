@@ -38,17 +38,14 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center">
+    <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center pl-16">
       <div className="w-full max-w-6xl py-10 px-4 sm:px-8 md:px-16 flex flex-col gap-20">
 
-        {/* Header aligned relative to content area excluding sidebar */}
-        <div className="relative w-full">
-          <div className="absolute left-[calc((100%-4rem)/2)] translate-x-[-50%] text-center">
-            <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
-            <div className="border-t border-gray-600 mt-2 w-full max-w-[300px] mx-auto"></div>
-          </div>
+        {/* Header centered in content area */}
+        <div className="text-center">
+          <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
+          <div className="border-t border-gray-600 mt-2 w-full max-w-[300px] mx-auto"></div>
         </div>
-
 
         {/* Work Experience */}
         <section>
