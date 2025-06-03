@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <div className="space-y-6 py-8">
+    <div className="max-w-3xl w-full py-8 space-y-6">
       <h1 className="text-4xl font-bold text-white">Welcome to My Portfolio</h1>
       <p className="text-lg text-gray-300">
         Hi, I’m M — a Computer Science student based in the UK. I specialize in full-stack development,

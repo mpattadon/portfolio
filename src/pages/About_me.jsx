@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="py-8">
+    <div className="max-w-3xl w-full py-8">
       <h1 className="text-3xl font-bold mb-4">About Me</h1>
       <ul className="list-disc list-inside space-y-2 text-lg">
         <li>Computer Science student in the UK</li>
