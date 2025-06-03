@@ -25,39 +25,64 @@ export default function Experience() {
       place: "University of Manchester, UK",
       period: "2017 – 2020",
     },
+    {
+      title: "A-Levels",
+      place: "City of London Academy, UK",
+      period: "2015 – 2017",
+    },
+    {
+      title: "GCSEs",
+      place: "City of London Academy, UK",
+      period: "2010 – 2015",
+    },
   ];
 
   return (
-    <div className="h-full min-h-screen flex-1 py-10 bg-gray-900 text-white flex flex-col gap-16 overflow-auto">
-      <section>
-        <h1 className="text-4xl font-extrabold mb-6">Experience</h1>
+    <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center">
+      <div className="w-full max-w-6xl py-10 px-4 sm:px-8 md:px-16 flex flex-col gap-20">
 
-        <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
-        <div className="relative border-l border-gray-700 ml-4">
-          {workExperience.map((item, index) => (
-            <div key={index} className="mb-10 ml-6 relative">
-              <div className="absolute w-3 h-3 bg-yellow-400 rounded-full left-[-22px] top-1"></div>
-              <h3 className="text-xl font-bold">{item.title}</h3>
-              <p className="text-sm text-gray-300">{item.place}</p>
-              <p className="text-sm text-gray-400 italic">{item.period}</p>
-            </div>
-          ))}
+        {/* Header aligned relative to content area excluding sidebar */}
+        <div className="relative w-full">
+          <div className="absolute left-[calc((100%-4rem)/2)] translate-x-[-50%] text-center">
+            <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
+            <div className="border-t border-gray-600 mt-2 w-full max-w-[300px] mx-auto"></div>
+          </div>
         </div>
-      </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Education</h2>
-        <div className="relative border-l border-gray-700 ml-4">
-          {educationExperience.map((item, index) => (
-            <div key={index} className="mb-10 ml-6 relative">
-              <div className="absolute w-3 h-3 bg-blue-400 rounded-full left-[-22px] top-1"></div>
-              <h3 className="text-xl font-bold">{item.title}</h3>
-              <p className="text-sm text-gray-300">{item.place}</p>
-              <p className="text-sm text-gray-400 italic">{item.period}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+
+        {/* Work Experience */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
+          <div className="relative border-l border-gray-700 ml-4">
+            {workExperience.map((item, index) => (
+              <div key={index} className="mb-10 ml-6 relative">
+                <div className="absolute w-3 h-3 bg-yellow-400 rounded-full left-[-22px] top-1"></div>
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <p className="text-sm text-gray-300">{item.place}</p>
+                <p className="text-sm text-gray-400 italic">{item.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-gray-600"></div>
+
+        {/* Education */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Education</h2>
+          <div className="relative border-l border-gray-700 ml-4">
+            {educationExperience.map((item, index) => (
+              <div key={index} className="mb-10 ml-6 relative">
+                <div className="absolute w-3 h-3 bg-blue-400 rounded-full left-[-22px] top-1"></div>
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <p className="text-sm text-gray-300">{item.place}</p>
+                <p className="text-sm text-gray-400 italic">{item.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
