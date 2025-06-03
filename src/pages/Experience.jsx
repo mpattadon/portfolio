@@ -38,50 +38,49 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center">
-      <div className="w-full max-w-6xl py-10 px-4 sm:px-8 md:px-16 flex flex-col gap-20">
-
-        {/* Header aligned relative to content area excluding sidebar */}
-        <div className="relative w-full">
-          <div className="absolute left-[calc((100%-4rem)/2)] translate-x-[-50%] text-center">
+    <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
+      {/* Content wrapper fills remaining width and centers content inside it */}
+      <div className="w-[calc(100vw-4rem)] flex flex-col items-center py-10 px-4">
+        <div className="w-full max-w-3xl">
+          {/* Header */}
+          <div className="text-center">
             <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
-            <div className="border-t border-gray-600 mt-2 w-full max-w-[300px] mx-auto"></div>
+            <div className="border-t border-gray-600 w-full mx-auto mb-10"></div>
           </div>
+
+          {/* Work Experience */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
+            <div className="relative border-l border-gray-700 ml-4">
+              {workExperience.map((item, index) => (
+                <div key={index} className="mb-10 ml-6 relative">
+                  <div className="absolute w-3 h-3 bg-yellow-400 rounded-full left-[-22px] top-1"></div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.place}</p>
+                  <p className="text-sm text-gray-400 italic">{item.period}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Divider */}
+          <div className="border-t border-gray-600 my-10"></div>
+
+          {/* Education */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-6">Education</h2>
+            <div className="relative border-l border-gray-700 ml-4">
+              {educationExperience.map((item, index) => (
+                <div key={index} className="mb-10 ml-6 relative">
+                  <div className="absolute w-3 h-3 bg-blue-400 rounded-full left-[-22px] top-1"></div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.place}</p>
+                  <p className="text-sm text-gray-400 italic">{item.period}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-
-
-        {/* Work Experience */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
-          <div className="relative border-l border-gray-700 ml-4">
-            {workExperience.map((item, index) => (
-              <div key={index} className="mb-10 ml-6 relative">
-                <div className="absolute w-3 h-3 bg-yellow-400 rounded-full left-[-22px] top-1"></div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-sm text-gray-300">{item.place}</p>
-                <p className="text-sm text-gray-400 italic">{item.period}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Divider */}
-        <div className="border-t border-gray-600"></div>
-
-        {/* Education */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Education</h2>
-          <div className="relative border-l border-gray-700 ml-4">
-            {educationExperience.map((item, index) => (
-              <div key={index} className="mb-10 ml-6 relative">
-                <div className="absolute w-3 h-3 bg-blue-400 rounded-full left-[-22px] top-1"></div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-sm text-gray-300">{item.place}</p>
-                <p className="text-sm text-gray-400 italic">{item.period}</p>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   );
