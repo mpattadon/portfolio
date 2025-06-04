@@ -4,25 +4,25 @@ import { useNavigate } from 'react-router-dom';
 const dummyProjects = [
   {
     title: 'Personal Portfolio',
-    image: '/assets/asset1.png',
+    image: 'assets/asset1.png',
     path: '/projects/personal-portfolio',
     type: 'personal',
   },
   {
-    title: 'Blog CMS',
-    image: '/assets/personal2.png',
+    title: 'Test',
+    image: 'assets/asset2.png',
     path: '/projects/blog-cms',
     type: 'personal',
   },
   {
-    title: 'University Database Project',
-    image: '/assets/uni1.png',
+    title: 'Test',
+    image: 'assets/asset3.png',
     path: '/projects/uni-database',
     type: 'university',
   },
   {
-    title: 'AI Pathfinding Visualizer',
-    image: '/assets/uni2.png',
+    title: 'Test',
+    image: 'assets/asset4.png',
     path: '/projects/ai-visualizer',
     type: 'university',
   },
@@ -40,7 +40,7 @@ function ProjectCard({ title, image, path }) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const rotateX = ((y / rect.height) - 0.5) * -15; // Smoother
+    const rotateX = ((y / rect.height) - 0.5) * -15;
     const rotateY = ((x / rect.width) - 0.5) * 15;
 
     card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
@@ -61,13 +61,17 @@ function ProjectCard({ title, image, path }) {
       onClick={() => navigate(path)}
       onMouseMove={handleMouseMove}
       onMouseLeave={resetTransform}
+      style={{ willChange: 'transform' }}
     >
-      <img src={image} alt={title} className="w-full h-40 object-cover" />
+      <img
+        src={`${import.meta.env.BASE_URL}${image}`}
+        alt={title}
+        className="w-full h-40 object-cover"
+      />
       <div className="text-center p-2 text-white text-lg font-semibold">{title}</div>
     </div>
   );
 }
-
 
 export default function Projects() {
   const personalProjects = dummyProjects.filter(p => p.type === 'personal');

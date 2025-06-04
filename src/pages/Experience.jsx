@@ -3,37 +3,37 @@ import React from 'react';
 export default function Experience() {
   const workExperience = [
     {
-      title: "Lecturer",
-      place: "Royal Holloway, University of London, Egham, UK",
+      title: "Placeholder",
+      place: "Placeholder",
       period: "July 2022 – Present",
     },
     {
-      title: "Research Scientist",
-      place: "Singapore Management University, Singapore",
-      period: "May 2021 – May 2022",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
+    },
+    {
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
   ];
 
   const educationExperience = [
     {
-      title: "MSc in Computer Science",
-      place: "Imperial College London, UK",
-      period: "2020 – 2021",
-    },
-    {
       title: "BSc in Computer Science",
-      place: "University of Manchester, UK",
-      period: "2017 – 2020",
+      place: "Royal Holloway, University of London, Egham, UK",
+      period: "September 2023 – Present",
     },
     {
-      title: "A-Levels",
-      place: "City of London Academy, UK",
-      period: "2015 – 2017",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
     {
-      title: "GCSEs",
-      place: "City of London Academy, UK",
-      period: "2010 – 2015",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
   ];
 
