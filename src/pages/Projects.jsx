@@ -1,34 +1,38 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const dummyProjects = [
+const Projects = [
   {
     title: 'Personal Portfolio',
+    description: 'A personal site showcasing my work and skills.',
     image: 'assets/asset1.png',
-    path: '/projects/personal-portfolio',
+    path: '/projects/PersonalPortfolio',
     type: 'personal',
   },
   {
     title: 'Test',
+    description: 'test',
     image: 'assets/asset2.png',
-    path: '/projects/blog-cms',
+    path: '/projects/Placeholder1',
     type: 'personal',
   },
   {
     title: 'Test',
+    description: 'test',
     image: 'assets/asset3.png',
-    path: '/projects/uni-database',
+    path: '/projects/Placeholder2',
     type: 'university',
   },
   {
     title: 'Test',
+    description: '',
     image: 'assets/asset4.png',
-    path: '/projects/ai-visualizer',
+    path: '/projects/Placeholder3',
     type: 'university',
   },
 ];
 
-function ProjectCard({ title, image, path }) {
+function ProjectCard({ title, description, image, path }) {
   const cardRef = useRef(null);
   const navigate = useNavigate();
 
@@ -57,7 +61,7 @@ function ProjectCard({ title, image, path }) {
   return (
     <div
       ref={cardRef}
-      className="project-card w-64 h-64 bg-gray-800 rounded-lg shadow-md border border-gray-600 overflow-hidden cursor-pointer"
+      className="project-card w-96 h-96 bg-gray-800 rounded-lg shadow-md border border-gray-600 overflow-hidden cursor-pointer"
       onClick={() => navigate(path)}
       onMouseMove={handleMouseMove}
       onMouseLeave={resetTransform}
@@ -66,16 +70,24 @@ function ProjectCard({ title, image, path }) {
       <img
         src={`${import.meta.env.BASE_URL}${image}`}
         alt={title}
-        className="w-full h-40 object-cover"
+        className="w-full h-56 object-cover"
       />
-      <div className="text-center p-2 text-white text-lg font-semibold">{title}</div>
+      <div className="px-4 py-2 text-white">
+        <h3 className="text-lg font-bold text-center">{title}</h3>
+        {typeof description === 'string' && (
+          <p className="text-sm text-gray-300 text-center mt-1">
+            {description.trim() === '' ? '\u00A0' : description}
+          </p>
+        )}
+      </div>
     </div>
   );
+
 }
 
-export default function Projects() {
-  const personalProjects = dummyProjects.filter(p => p.type === 'personal');
-  const universityProjects = dummyProjects.filter(p => p.type === 'university');
+export default function ProjectsPage() {
+  const personalProjects = Projects.filter(p => p.type === 'personal');
+  const universityProjects = Projects.filter(p => p.type === 'university');
 
   return (
     <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
@@ -90,12 +102,17 @@ export default function Projects() {
           <h2 className="text-2xl font-semibold mb-6">Personal Projects</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {personalProjects.map((proj, i) => (
-              <ProjectCard key={i} title={proj.title} image={proj.image} path={proj.path} />
+              <ProjectCard
+                key={i}
+                title={proj.title}
+                description={proj.description}
+                image={proj.image}
+                path={proj.path}
+              />
             ))}
           </div>
         </section>
 
-        {/* Divider */}
         <div className="border-t border-gray-600 w-full max-w-6xl"></div>
 
         {/* University Projects Section */}
@@ -103,7 +120,13 @@ export default function Projects() {
           <h2 className="text-2xl font-semibold mb-6">University Projects</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {universityProjects.map((proj, i) => (
-              <ProjectCard key={i} title={proj.title} image={proj.image} path={proj.path} />
+              <ProjectCard
+                key={i}
+                title={proj.title}
+                description={proj.description}
+                image={proj.image}
+                path={proj.path}
+              />
             ))}
           </div>
         </section>
