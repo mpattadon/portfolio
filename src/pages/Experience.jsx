@@ -38,14 +38,14 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
-      {/* Content wrapper fills remaining width and centers content inside it */}
-      <div className="w-[calc(100vw-4rem)] flex flex-col items-center py-10 px-4">
-        <div className="w-full max-w-3xl">
+    <div className="min-h-screen w-full bg-gray-900 text-white pl-16">
+      {/* Force the visible area to behave as if it's centered minus the sidebar */}
+      <div className="w-[calc(100vw-4rem)] flex justify-center">
+        <div className="w-full max-w-3xl py-10 px-4">
           {/* Header */}
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
-            <div className="border-t border-gray-600 w-full mx-auto mb-10"></div>
+            <div className="border-t border-gray-600 w-full mx-auto"></div>
           </div>
 
           {/* Work Experience */}
