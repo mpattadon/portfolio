@@ -38,7 +38,7 @@ export default function Experience() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white pl-16">
+    <div className="min-h-screen w-full bg-gray-900 text-white pl-4 sm:pl-8 md:pl-16">
       {/* Force the visible area to behave as if it's centered minus the sidebar */}
       <div className="w-[calc(100vw-4rem)] flex justify-center">
         <div className="w-full max-w-3xl py-10 px-4">

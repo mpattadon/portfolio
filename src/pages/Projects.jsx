@@ -5,28 +5,28 @@ const Projects = [
   {
     title: 'Personal Portfolio',
     description: 'A personal site showcasing my work and skills.',
-    image: 'assets/asset1.png',
+    image: 'assets/projects/asset1.png',
     path: '/projects/PersonalPortfolio',
     type: 'personal',
   },
   {
     title: 'Test',
     description: 'test',
-    image: 'assets/asset2.png',
+    image: 'assets/projects/asset2.png',
     path: '/projects/Placeholder1',
     type: 'personal',
   },
   {
     title: 'Test',
     description: 'test',
-    image: 'assets/asset3.png',
+    image: 'assets/projects/asset3.png',
     path: '/projects/Placeholder2',
     type: 'university',
   },
   {
     title: 'Test',
     description: '',
-    image: 'assets/asset4.png',
+    image: 'assets/projects/asset4.png',
     path: '/projects/Placeholder3',
     type: 'university',
   },
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
   const universityProjects = Projects.filter(p => p.type === 'university');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
+    <div className="min-h-screen bg-gray-900 text-white lg:pl-16 flex justify-center">
       <div className="w-[calc(100vw-4rem)] py-10 px-4 flex flex-col items-center gap-16">
         <div className="text-center w-full max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-2">Projects</h1>
