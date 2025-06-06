@@ -8,7 +8,7 @@ import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Sidebar from './components/Sidebar';
 
-//Imports for projeccts
+//Imports for projects
 import PersonalPortfolio from './pages/projects/PersonalPortfolio';
 import Placeholder1 from './pages/projects/Placeholder1';
 import Placeholder2 from './pages/projects/Placeholder2';

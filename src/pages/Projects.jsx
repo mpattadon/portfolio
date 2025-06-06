@@ -90,7 +90,7 @@ export default function ProjectsPage() {
   const universityProjects = Projects.filter(p => p.type === 'university');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
+    <div className="min-h-screen bg-gray-900 text-white lg:pl-16 flex justify-center">
       <div className="w-[calc(100vw-4rem)] py-10 px-4 flex flex-col items-center gap-16">
         <div className="text-center w-full max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-2">Projects</h1>
