@@ -1,17 +1,122 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const projects = [
+    {
+      title: 'Personal Portfolio',
+      image: 'assets/projects/asset1.png',
+      path: '/projects/PersonalPortfolio',
+    },
+    {
+      title: 'Blog CMS',
+      image: 'assets/projects/asset2.png',
+      path: '/projects/Placeholder1',
+    },
+    {
+      title: 'AI Visualizer',
+      image: 'assets/projects/asset3.png',
+      path: '/projects/Placeholder2',
+    },
+  ];
+
   return (
-    <div className="max-w-3xl w-full py-8 space-y-6">
-      <h1 className="text-4xl font-bold text-white">Welcome to My Portfolio</h1>
-      <p className="text-lg text-gray-300">
-        Hi, I’m M — a Computer Science student based in the UK. I specialize in full-stack development,
-        systems design, and building things that make people's lives easier.
-      </p>
-      <p className="text-gray-400">
-        Feel free to browse through my projects, experiences, and get in touch if you're interested in
-        collaborating or learning more about my work.
-      </p>
+    <div className="min-h-screen bg-gray-900 text-white pl-16">
+      <div className="flex justify-center">
+        <div className="w-[calc(100vw-4rem)] max-w-6xl px-4 py-10 flex flex-col items-center">
+          {/* Header */}
+          <h1 className="text-4xl font-extrabold mb-2 text-center">Welcome to My Website!</h1>
+          <div className="w-full border-t border-gray-600 mb-10"></div>
+
+          {/* Portrait and Info */}
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 w-full mb-12">
+            <img src="assets/portrait1.jpg" alt="Portrait" className="w-48 h-48 rounded-full object-cover" />
+            <div>
+              <h2 className="text-3xl font-bold">Pattadon Chattrakul</h2>
+              <p className="text-lg text-gray-300">Second Year Computer Science Student at Royal Holloway, University of London</p>
+            </div>
+          </div>
+
+          {/* About Paragraph */}
+          <p className="text-center md:text-left text-gray-300 max-w-3xl mb-12">
+            I'm a passionate and driven computer science student with interests in software engineering,
+            web development, and AI. This site showcases my projects, skills, and ways to get in touch.
+          </p>
+
+          {/* Projects Slider */}
+          <div className="w-full border-t border-gray-600 mb-6"></div>
+          <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
+          <div className="relative w-full overflow-x-auto mb-12">
+            <div className="flex gap-4 w-max">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  onClick={() => navigate(project.path)}
+                  className="min-w-[300px] h-48 bg-gray-800 rounded-lg shadow-md border border-gray-600 cursor-pointer hover:scale-105 transition-all duration-300"
+                >
+                  <img src={project.image} alt={project.title} className="w-full h-32 object-cover rounded-t-lg" />
+                  <p className="text-center text-white p-2">{project.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div className="w-full border-t border-gray-600 mb-6"></div>
+          <h2 className="text-2xl font-semibold mb-4">My Skills</h2>
+          <div className="flex gap-6 justify-center flex-wrap mb-6">
+            {[
+              { name: "Java", icon: "java.svg" },
+              { name: "Python", icon: "python.svg" },
+              { name: "JavaScript", icon: "js.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "Git", icon: "git.svg" },
+              { name: "SQL", icon: "sql.svg" },
+              { name: "CI/CD", icon: "cicd.svg" }
+            ].map((skill, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <img src={`assets/icons/${skill.icon}`} alt={skill.name} className="w-14 h-14 object-contain" />
+                <span className="mt-2 text-sm text-gray-200">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Resume / CV Downloads */}
+          <div className="flex flex-col items-center gap-2 mb-12">
+            <a
+              href={`${import.meta.env.BASE_URL}assets/Pattadon_Chattrakul_Resume.pdf`}
+              download="Pattadon_Chattrakul_Resume.pdf"
+              className="text-yellow-400 underline hover:text-yellow-300"
+            >
+              Download My CV
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}assets/Pattadon_Chattrakul_Resume.pdf`}
+              download="Pattadon_Chattrakul_Resume.pdf"
+              className="text-yellow-400 underline hover:text-yellow-300"
+            >
+              Download My Resume
+            </a>
+          </div>
+
+          {/* Contacts Section */}
+          <div className="w-full border-t border-gray-600 mb-6"></div>
+          <h2 className="text-2xl font-semibold mb-4">My Contacts</h2>
+          <div className="flex gap-8 justify-center mb-6">
+            <a href="https://github.com/mpattadon" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/gh.svg" alt="GitHub" className="w-16 h-16 object-contain" />
+            </a>
+            <a href="mailto:mpattadon.c@gmail.com">
+              <img src="assets/icons/email.svg" alt="Email" className="w-16 h-16 object-contain" />
+            </a>
+            <a href="https://www.linkedin.com/in/pattadon-chattrakul-74a713273/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/linkedin.svg" alt="LinkedIn" className="w-16 h-16 object-contain" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
