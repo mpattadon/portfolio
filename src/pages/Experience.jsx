@@ -3,49 +3,49 @@ import React from 'react';
 export default function Experience() {
   const workExperience = [
     {
-      title: "Lecturer",
-      place: "Royal Holloway, University of London, Egham, UK",
+      title: "Placeholder",
+      place: "Placeholder",
       period: "July 2022 – Present",
     },
     {
-      title: "Research Scientist",
-      place: "Singapore Management University, Singapore",
-      period: "May 2021 – May 2022",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
+    },
+    {
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
   ];
 
   const educationExperience = [
     {
-      title: "MSc in Computer Science",
-      place: "Imperial College London, UK",
-      period: "2020 – 2021",
-    },
-    {
       title: "BSc in Computer Science",
-      place: "University of Manchester, UK",
-      period: "2017 – 2020",
+      place: "Royal Holloway, University of London, Egham, UK",
+      period: "September 2023 – Present",
     },
     {
-      title: "A-Levels",
-      place: "City of London Academy, UK",
-      period: "2015 – 2017",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
     {
-      title: "GCSEs",
-      place: "City of London Academy, UK",
-      period: "2010 – 2015",
+      title: "Placeholder",
+      place: "Placeholder",
+      period: "Date",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pl-16 flex justify-center">
-      {/* Content wrapper fills remaining width and centers content inside it */}
-      <div className="w-[calc(100vw-4rem)] flex flex-col items-center py-10 px-4">
-        <div className="w-full max-w-3xl">
+    <div className="min-h-screen w-full bg-gray-900 text-white pl-4 sm:pl-8 md:pl-16">
+      {/* Force the visible area to behave as if it's centered minus the sidebar */}
+      <div className="w-[calc(100vw-4rem)] flex justify-center">
+        <div className="w-full max-w-3xl py-10 px-4">
           {/* Header */}
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h1 className="text-4xl font-extrabold mb-2">Experience</h1>
-            <div className="border-t border-gray-600 w-full mx-auto mb-10"></div>
+            <div className="border-t border-gray-600 w-full mx-auto"></div>
           </div>
 
           {/* Work Experience */}

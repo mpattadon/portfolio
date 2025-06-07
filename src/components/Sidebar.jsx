@@ -1,7 +1,13 @@
-// Sidebar.jsx
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaUser, FaProjectDiagram, FaEnvelope, FaBriefcase } from 'react-icons/fa';
+import {
+  FaHome,
+  FaUser,
+  FaProjectDiagram,
+  FaEnvelope,
+  FaBriefcase,
+  FaCode,
+} from 'react-icons/fa';
 
 export default function Sidebar({ setSidebarHovered }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -10,6 +16,7 @@ export default function Sidebar({ setSidebarHovered }) {
   const navItems = [
     { name: 'Home', path: '/', icon: <FaHome /> },
     { name: 'About', path: '/about', icon: <FaUser /> },
+    { name: 'Skills', path: '/skills', icon: <FaCode /> },
     { name: 'Projects', path: '/projects', icon: <FaProjectDiagram /> },
     { name: 'Experience', path: '/experience', icon: <FaBriefcase /> },
     { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },

@@ -40,6 +40,12 @@
   padding: 2em;
 }
 
+.project-card {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+}
+
 .read-the-docs {
   color: #888;
 }
