@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PageWrapper from '../components/PageWrapper';
 
 const Projects = [
   {
@@ -82,7 +83,6 @@ function ProjectCard({ title, description, image, path }) {
       </div>
     </div>
   );
-
 }
 
 export default function ProjectsPage() {
@@ -90,47 +90,46 @@ export default function ProjectsPage() {
   const universityProjects = Projects.filter(p => p.type === 'university');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white lg:pl-16 flex justify-center">
-      <div className="w-[calc(100vw-4rem)] py-10 px-4 flex flex-col items-center gap-16">
-        <div className="text-center w-full max-w-4xl">
-          <h1 className="text-4xl font-extrabold mb-2">Projects</h1>
-          <div className="border-t border-gray-600 w-full mx-auto mb-10"></div>
-        </div>
-
-        {/* Personal Projects Section */}
-        <section className="w-full max-w-6xl">
-          <h2 className="text-2xl font-semibold mb-6">Personal Projects</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {personalProjects.map((proj, i) => (
-              <ProjectCard
-                key={i}
-                title={proj.title}
-                description={proj.description}
-                image={proj.image}
-                path={proj.path}
-              />
-            ))}
-          </div>
-        </section>
-
-        <div className="border-t border-gray-600 w-full max-w-6xl"></div>
-
-        {/* University Projects Section */}
-        <section className="w-full max-w-6xl">
-          <h2 className="text-2xl font-semibold mb-6">University Projects</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {universityProjects.map((proj, i) => (
-              <ProjectCard
-                key={i}
-                title={proj.title}
-                description={proj.description}
-                image={proj.image}
-                path={proj.path}
-              />
-            ))}
-          </div>
-        </section>
+    <PageWrapper>
+      <div className="w-full max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl font-extrabold mb-2">Projects</h1>
+        <div className="w-full border-t border-gray-600 mb-10"></div>
       </div>
-    </div>
+
+
+      {/* Personal Projects Section */}
+      <section className="w-full max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6">Personal Projects</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {personalProjects.map((proj, i) => (
+            <ProjectCard
+              key={i}
+              title={proj.title}
+              description={proj.description}
+              image={proj.image}
+              path={proj.path}
+            />
+          ))}
+        </div>
+      </section>
+
+      <div className="border-t border-gray-600 w-full max-w-6xl my-10"></div>
+
+      {/* University Projects Section */}
+      <section className="w-full max-w-6xl">
+        <h2 className="text-2xl font-semibold mb-6">University Projects</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {universityProjects.map((proj, i) => (
+            <ProjectCard
+              key={i}
+              title={proj.title}
+              description={proj.description}
+              image={proj.image}
+              path={proj.path}
+            />
+          ))}
+        </div>
+      </section>
+    </PageWrapper>
   );
 }
