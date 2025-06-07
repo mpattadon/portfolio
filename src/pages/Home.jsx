@@ -131,14 +131,14 @@ export default function Home() {
             <a
               href={`${import.meta.env.BASE_URL}assets/Pattadon_Chattrakul_Resume.pdf`}
               download="Pattadon_Chattrakul_Resume.pdf"
-              className="text-yellow-400 underline hover:text-yellow-300"
+              className="text-blue-400 underline hover:text-yellow-400 transition-colors"
             >
               Download My CV
             </a>
             <a
               href={`${import.meta.env.BASE_URL}assets/Pattadon_Chattrakul_Resume.pdf`}
               download="Pattadon_Chattrakul_Resume.pdf"
-              className="text-yellow-400 underline hover:text-yellow-300"
+              className="text-blue-400 underline hover:text-yellow-400 transition-colors"
             >
               Download My Resume
             </a>
