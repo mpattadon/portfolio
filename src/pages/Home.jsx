@@ -1,9 +1,52 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+function TiltProjectCard({ title, image, path }) {
+  const cardRef = useRef(null);
   const navigate = useNavigate();
 
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * -15;
+    const rotateY = ((x / rect.width) - 0.5) * 15;
+
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  };
+
+  const resetTransform = () => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    card.style.transition = 'transform 0.3s ease-out';
+    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      className="project-card w-72 h-48 bg-gray-800 rounded-lg shadow-md border border-gray-600 overflow-hidden cursor-pointer"
+      onClick={() => navigate(path)}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetTransform}
+      style={{ willChange: 'transform' }}
+    >
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-32 object-cover rounded-t-lg"
+      />
+      <p className="text-center text-white p-2">{title}</p>
+    </div>
+  );
+}
+
+export default function Home() {
   const projects = [
     {
       title: 'Personal Portfolio',
@@ -47,26 +90,18 @@ export default function Home() {
             web development, and AI. This site showcases my projects, skills, and ways to get in touch.
           </p>
 
-          {/* Projects Divider */}
-          <div className="w-full border-t border-gray-600 mb-6"></div>
-
           {/* Featured Projects */}
+          <div className="w-full border-t border-gray-600 mb-6"></div>
           <h2 className="text-2xl font-semibold mb-4 text-center">Featured Projects</h2>
           <div className="w-full flex justify-center mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {projects.map((project, index) => (
-                <div
+                <TiltProjectCard
                   key={index}
-                  onClick={() => navigate(project.path)}
-                  className="w-72 h-48 bg-gray-800 rounded-lg shadow-md border border-gray-600 cursor-pointer hover:scale-105 transition-transform duration-300"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-32 object-cover rounded-t-lg"
-                  />
-                  <p className="text-center text-white p-2">{project.title}</p>
-                </div>
+                  title={project.title}
+                  image={project.image}
+                  path={project.path}
+                />
               ))}
             </div>
           </div>
@@ -126,6 +161,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-
   );
 }
