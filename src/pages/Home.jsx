@@ -107,7 +107,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="w-full border-t border-gray-600 mb-6"></div>
-      <h2 className="text-2xl font-semibold mb-4 text-center">My Skills</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">Featured Skills</h2>
       <div className="flex gap-6 justify-center flex-wrap mb-6">
         {[
           { name: "Java", icon: "java.svg" },
