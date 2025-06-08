@@ -71,65 +71,63 @@ const skills = {
 export default function SkillsPage() {
   return (
     <PageWrapper>
-      <div className="w-full max-w-6xl mx-auto px-4 pb-10">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-4xl font-extrabold mb-2">My Skills</h1>
-          <div className="w-full border-t border-gray-600 mx-auto"></div>
-        </div>
+      {/* Header */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-extrabold mb-2">My Skills</h1>
+        <div className="w-full border-t border-gray-600 mb-10"></div>
+      </div>
 
-        {/* Languages */}
-        <h2 className="text-2xl font-semibold mb-4">Languages</h2>
-        <div className="mb-6">
-          {skills.languages.map((lang, i) => (
-            <div key={i} className="mb-4">
-              <h3 className="text-lg font-bold">{lang.name}</h3>
-              <p className="text-sm text-gray-300">{lang.description}</p>
-            </div>
-          ))}
-        </div>
-        <div className="w-full border-t border-gray-600 mx-auto my-6"></div>
+      {/* Languages */}
+      <h2 className="text-2xl font-semibold mb-4">Languages</h2>
+      <div className="mb-6">
+        {skills.languages.map((lang, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="text-lg font-bold">{lang.name}</h3>
+            <p className="text-sm text-gray-300">{lang.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="w-full border-t border-gray-600 mb-10"></div>
 
-        {/* Characteristics */}
-        <h2 className="text-2xl font-semibold mb-4">Characteristics</h2>
-        <div className="mb-6">
-          {skills.characteristics.map((char, i) => (
-            <div key={i} className="mb-4">
-              <h3 className="text-lg font-bold">{char.name}</h3>
-              <p className="text-sm text-gray-300">{char.description}</p>
-            </div>
-          ))}
-        </div>
-        <div className="w-full border-t border-gray-600 mx-auto my-6"></div>
+      {/* Characteristics */}
+      <h2 className="text-2xl font-semibold mb-4">Characteristics</h2>
+      <div className="mb-6">
+        {skills.characteristics.map((char, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="text-lg font-bold">{char.name}</h3>
+            <p className="text-sm text-gray-300">{char.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="w-full border-t border-gray-600 mb-10"></div>
 
-        {/* Technologies */}
-        <h2 className="text-2xl font-semibold mb-4">Technology</h2>
-        <div className="grid sm:grid-cols-2 gap-6 mb-6">
-          {skills.technologies.map((tech, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <img src={`assets/icons/${tech.icon}`} alt={tech.name} className="w-10 h-10 object-contain mt-1" />
-              <div>
-                <h3 className="text-lg font-bold">{tech.name}</h3>
-                <p className="text-sm text-gray-300">{tech.description}</p>
-              </div>
+      {/* Technologies */}
+      <h2 className="text-2xl font-semibold mb-4">Technology</h2>
+      <div className="grid sm:grid-cols-2 gap-6 mb-6">
+        {skills.technologies.map((tech, i) => (
+          <div key={i} className="flex items-start gap-4">
+            <img src={`assets/icons/${tech.icon}`} alt={tech.name} className="w-10 h-10 object-contain mt-1" />
+            <div>
+              <h3 className="text-lg font-bold">{tech.name}</h3>
+              <p className="text-sm text-gray-300">{tech.description}</p>
             </div>
-          ))}
-        </div>
-        <div className="w-full border-t border-gray-600 mx-auto my-6"></div>
+          </div>
+        ))}
+      </div>
+      <div className="w-full border-t border-gray-600 mb-10"></div>
 
-        {/* AI */}
-        <h2 className="text-2xl font-semibold mb-4">AI</h2>
-        <div className="grid sm:grid-cols-2 gap-6 mb-6">
-          {skills.ai.map((aiSkill, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <img src={`assets/icons/${aiSkill.icon}`} alt={aiSkill.name} className="w-10 h-10 object-contain mt-1" />
-              <div>
-                <h3 className="text-lg font-bold">{aiSkill.name}</h3>
-                <p className="text-sm text-gray-300">{aiSkill.description}</p>
-              </div>
+      {/* AI */}
+      <h2 className="text-2xl font-semibold mb-4">AI</h2>
+      <div className="grid sm:grid-cols-2 gap-6 mb-6">
+        {skills.ai.map((aiSkill, i) => (
+          <div key={i} className="flex items-start gap-4">
+            <img src={`assets/icons/${aiSkill.icon}`} alt={aiSkill.name} className="w-10 h-10 object-contain mt-1" />
+            <div>
+              <h3 className="text-lg font-bold">{aiSkill.name}</h3>
+              <p className="text-sm text-gray-300">{aiSkill.description}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </PageWrapper>
   );
