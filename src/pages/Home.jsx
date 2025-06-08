@@ -1,32 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageWrapper from '../components/PageWrapper';
+import { useTiltCard } from '../components/useTiltCard';
 
 function TiltProjectCard({ title, image, path }) {
-  const cardRef = useRef(null);
   const navigate = useNavigate();
-
-  const handleMouseMove = (e) => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const rotateX = ((y / rect.height) - 0.5) * -15;
-    const rotateY = ((x / rect.width) - 0.5) * 15;
-
-    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-  };
-
-  const resetTransform = () => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    card.style.transition = 'transform 0.3s ease-out';
-    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
-  };
+  const { cardRef, handleMouseMove, resetTransform } = useTiltCard();
 
   return (
     <div
